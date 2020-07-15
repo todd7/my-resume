@@ -16,6 +16,11 @@ export default createGlobalStyle`
     -webkit-font-smoothing: antialiased;
   }
 
+  button {
+    cursor: pointer;
+    font: 16px Roboto, sans-serif;
+  }
+
   #root {
     /* max-width: 964px; */
     /* margin: 40px auto; */
