@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import {
-  FiMail,
-  FiLinkedin,
-  FiGithub,
-  FiTwitter,
-  FiMapPin,
-} from 'react-icons/fi';
+  FaEnvelope,
+  FaLinkedin,
+  FaGithub,
+  FaTwitter,
+  FaMapMarkerAlt,
+} from 'react-icons/fa';
+import { ThemeContext } from 'styled-components';
 
 import {
   Container,
@@ -19,11 +20,20 @@ import {
 
 import profile from '../../assets/img/profile.jpg';
 
-const Home: React.FC = () => {
+interface Props {
+  toggleTheme(): void;
+}
+
+// eslint-disable-next-line react/prop-types
+const Home: React.FC<Props> = ({ toggleTheme }) => {
+  const { name } = useContext(ThemeContext);
+
   return (
     <Container>
       <Theme>
-        <button type="submit">Dark</button>
+        <button type="submit" onClick={toggleTheme}>
+          {name === 'light' ? 'Dark' : 'Light'}
+        </button>
       </Theme>
 
       <Header>
@@ -37,34 +47,34 @@ const Home: React.FC = () => {
 
         <Description>
           Hello, my name is Edson and I’m 24 years old and that’s my resume. For
-          a long time I went Web Developer, but now I am in new journey to
-          become one Full Stack Developer.
+          a long time I&apos;ve been a Web Developer, but now I am in a new
+          journey to become a Full Stack Developer.
         </Description>
 
         <Contacts>
           <ul>
             <li>
-              <FiMail />
+              <FaEnvelope />
               edson_a@outlook.com
             </li>
 
             <li>
-              <FiLinkedin />
+              <FaLinkedin />
               linkedin.com/in/edsonantjunior
             </li>
 
             <li>
-              <FiGithub />
+              <FaGithub />
               github.com/todd7
             </li>
 
             <li>
-              <FiTwitter />
+              <FaTwitter />
               @todd7n
             </li>
 
             <li>
-              <FiMapPin />
+              <FaMapMarkerAlt />
               Florianópolis, SC - Brazil
             </li>
           </ul>

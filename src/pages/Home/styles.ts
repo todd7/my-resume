@@ -29,7 +29,7 @@ export const Theme = styled.div`
     color: ${props => props.theme.colors.light};
     border: 0;
     text-transform: uppercase;
-    font-size: 24px;
+    font-size: min(20px, 5vw);
     font-weight: 700;
     width: 78px;
     height: 34px;
