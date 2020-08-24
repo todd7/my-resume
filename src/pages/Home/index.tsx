@@ -1,5 +1,7 @@
 import React, { useContext } from 'react';
 import {
+  FaSun,
+  FaMoon,
   FaEnvelope,
   FaLinkedin,
   FaGithub,
@@ -18,7 +20,7 @@ import {
   Footer,
 } from './styles';
 
-import profile from '../../assets/img/profile.jpg';
+import profile from '../../assets/img/profile.png';
 
 interface Props {
   toggleTheme(): void;
@@ -32,7 +34,7 @@ const Home: React.FC<Props> = ({ toggleTheme }) => {
     <Container>
       <Theme>
         <button type="submit" onClick={toggleTheme}>
-          {name === 'light' ? 'Dark' : 'Light'}
+          {name === 'light' ? <FaMoon /> : <FaSun />}
         </button>
       </Theme>
 
@@ -46,9 +48,10 @@ const Home: React.FC<Props> = ({ toggleTheme }) => {
         <p>Full Stack Developer</p>
 
         <Description>
-          Hello, my name is Edson and I’m 24 years old and that’s my resume. For
-          a long time I&apos;ve been a Web Developer, but now I am in a new
-          journey to become a Full Stack Developer.
+          A long time ago in a galaxy no far, the young padawan Edson begins its
+          journey to become a master Jedi in Development Full Stack. Having
+          mastered Angular, now he goes in search of knowledge of Node Js,
+          Express and MongoDB technologies.
         </Description>
 
         <Contacts>

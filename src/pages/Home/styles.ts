@@ -3,7 +3,7 @@ import { shade, tint } from 'polished';
 
 export const Container = styled.div`
   display: grid;
-  grid-template-rows: 5vh 17.5vh minmax(67.5vh, auto) 10vh;
+  grid-template-rows: 5vh 16.5vh minmax(67.5vh, auto) 10vh;
   grid-template-areas:
     't'
     'h'
@@ -25,14 +25,14 @@ export const Theme = styled.div`
   margin-right: 20px;
 
   button {
+    display: flex;
+
     background: ${props => props.theme.colors.primary};
     color: ${props => props.theme.colors.light};
     border: 0;
     text-transform: uppercase;
     font-size: min(20px, 5vw);
     font-weight: 700;
-    width: 78px;
-    height: 34px;
 
     &:hover {
       color: ${props =>
@@ -67,7 +67,7 @@ export const Main = styled.main`
   max-width: 816px;
   width: 100%;
   margin: 0 auto;
-  background: ${props => props.theme.colors.secundary};
+  background: ${props => props.theme.colors.secondary};
   border-top: 3px solid ${props => props.theme.colors.accent};
   border-bottom: 3px solid ${props => props.theme.colors.accent};
   padding: 40px;
@@ -76,6 +76,11 @@ export const Main = styled.main`
     width: 142px;
     height: 142px;
     border-radius: 50%;
+    border: 4px solid
+      ${props =>
+        props.theme.name === 'light'
+          ? props.theme.colors.primary
+          : props.theme.colors.secondary};
   }
 
   p {
